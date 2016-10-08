@@ -7,7 +7,7 @@
         <img src="<%=article.user.avatar%>" alt="..." width="72">
     </a>
     <div class="media-body">
-        <h4 class="media-heading"><%=article.title%></h4>
+        <h4 class="media-heading"><a href="/articles/detail/<%=article._id%>"><%=article.title%></a></h4>
         <%-article.content%>
     </div>
     <div class="media-bottom">

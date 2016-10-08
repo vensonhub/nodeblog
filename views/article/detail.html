@@ -1,0 +1,10 @@
+<%- include ../include/header.html %>
+<div class="panel panel-default">
+    <div class="panel-heading"><%=article.title%></div>
+    <div class="panel-body"><%-article.content%><img class="img-responsive" src="<%=article.poster%>" alt="<%=article.title%>"></div>
+    <div class="panel-footer">
+        <a href="/articles/edit/<%=article._id%>" class="btn btn-warning">编辑</a>
+        <a href="/articles/delete/<%=article._id%>" class="btn btn-danger">删除</a>
+    </div>
+</div>
+<%- include ../include/footer.html %>
