@@ -12,7 +12,9 @@
     </div>
     <div class="media-bottom">
        作者:<%=article.user.username%>
-       发布时间:<%=article.createAt.toLocaleString()%>
+       发布时间:<%=article.createAt.toLocaleString()%>|
+        阅读:<%=article.pv%>|
+        评论:<%=article.comments.length%>
     </div>
 </div>
 
