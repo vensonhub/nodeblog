@@ -1,0 +1,50 @@
+<%- include include/header.html %>
+<%
+    articles.forEach(function(article){
+%>
+<div class="media">
+    <a class="media-left media-middle" href="#">
+        <img src="<%=article.user.avatar%>" alt="..." width="72">
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading"><%=article.title%></h4>
+        <%-article.content%>
+    </div>
+    <div class="media-bottom">
+       作者:<%=article.user.username%>
+       发布时间:<%=article.createAt.toLocaleString()%>
+    </div>
+</div>
+
+<%
+    });
+%>
+<nav>
+    <ul class="pagination">
+        <%
+        if(pageNum>1){
+        %>
+        <li><a href="/?keyword=<%=keyword%>&pageNum=<%=pageNum-1%>&pageSize=<%=pageSize%>">&laquo;</a></li>
+        <%
+        }
+        %>
+
+        <%
+            for(var i=1;i<=totalPage;i++){
+        %>
+        <li class="<%= i==pageNum?'active':'' %>"><a href="/?keyword=<%=keyword%>&pageNum=<%=i%>&pageSize=<%=pageSize%>"><%=i%></a></li>
+        <%
+            }
+        %>
+        <%
+        if(pageNum < totalPage){
+        %>
+        <li><a href="/?keyword=<%=keyword%>&pageNum=<%=pageNum+1%>&pageSize=<%=pageSize%>">&raquo;</a></li>
+        <%
+        }
+        %>
+
+    </ul>
+</nav>
+<%- include include/footer.html %>
+
